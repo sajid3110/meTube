@@ -1,0 +1,70 @@
+<html>
+<% include header.ejs %>
+
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <script>
+            $(document).ready(function () {
+                $(".delete").click(function () {
+                    $(".remove").show();
+                });
+            })
+        </script>
+        <title>My Uploads</title>
+    </head>
+
+    <body>
+        <div class="myUploads">
+            <div class="myUploads-sidebar">
+                <a href="/myProfile/myUploads/new_upload" class="upload-new">Upload new</a> <br />
+                <a href="#" class="delete">Delete Video</a>
+            </div>
+
+            <% if(videos==0) { %>
+                No Videos Uploaded Yet
+                <% } %>
+
+
+                    <% if(videos!=0) { %>
+
+                        <% for( i=0 ; i<videos.length ; i++) { %>
+                            <div class="myUploads-uploads">
+                                <div class="myUploads-details">
+                                    <strong>vid</strong> :
+                                    <%= videos[i].vid %>
+                                        <strong>name</strong> :
+                                        <%= videos[i].name %>
+                                            <strong>category</strong> :
+                                            <%= videos[i].category %>
+                                                <strong>format</strong> :
+                                                <%= videos[i].format %>
+                                                    <strong>date</strong> :
+                                                    <%= videos[i].date %>
+                                                        <br />
+                                                        <span class="remove" style="display : none;"> 
+                                                            <form name="remove" action="">
+                                                            <input type="hidden" value=<%= videos[i].vid %>>
+                                                            <input type="submit" value="Remove">
+                                                            </form> 
+                                                        </span>
+                                </div>
+                                <br />
+                                <div class="myUploads-video">
+                                    <video width="320" height="300" controls>
+                                        <source src="<%= videos[i].url %>"></source>
+                                    </video>
+                                </div>
+                                <br/>
+                            </div>
+                            <% } %>
+
+                                <% } %>
+        </div>
+
+    </body>
+
+</html>

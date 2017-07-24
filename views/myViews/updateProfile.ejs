@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Update Page</title>
+  <% include header.ejs %>
+</head>
+<body>
+  <div class="container">
+    <form name="updateForm" action="/myProfile/update" method="post">
+        Password : <input type="text" name="password"> <br/><br/>
+        firstname : <input type="text" name="firstname"> <br/><br/>
+        lastname : <input type="text" name="lastname"> <br/><br/>
+        email : <input type="text" name="email"> <br/><br/>
+        <input type="submit" name="submit" value="Update">
+    </form>
+  </div>
+
+</body>
+</html>

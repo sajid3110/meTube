@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <% include header.ejs %>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="loginForm" action="/login" method="post">
+        Username : <input type="text" name="username" required><br><br>
+        Password : <input type="text" name="password" required><br><br>
+        <input type="submit" name="loginsubmit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

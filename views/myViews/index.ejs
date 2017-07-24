@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<% include header.ejs %>
+
+  <head>
+
+    <title>
+      <%= title %>
+    </title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+
+  <body>
+    <div class="container">
+
+      <% if(typeof(allVids)!='undefined') { %>
+
+        <% for( i = 0; i< allVids.length; i++) { %>
+
+          <% if(page == 'index') { %>
+
+            <% for(j=0 ; j< allVids[i].videosUploaded.length ; j++) { %>
+              <p>
+                <div name="videodiv">
+                  This video<br>
+                  <video width="320" height="240" controls>
+                    <source src="<%= allVids[i].videosUploaded[j].url %>" type="video/<%= allVids[i].videosUploaded[j].format %>"></source>
+                  </video>
+                  <br/><br/>
+                </div>
+              </p>
+              <!-- <%= allVids[i].videosUploaded[j].url %> -->
+              <% } %>
+
+
+                <% } else { %>
+                  <ul>
+                    <li>
+                      <a href='/categories/<%= allVids[i]._id %>'>
+                        <%= allVids[i]._id %>
+                      </a>
+                    </li>
+                  </ul>
+                  <% } %>
+
+
+                    <% } %>
+
+                      <% } %>
+
+    </div>
+  </body>
+
+</html>

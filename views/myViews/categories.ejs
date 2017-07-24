@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<% include header.ejs %>
+  <head>
+
+    <title><%= title.toUpperCase() %></title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <div class="container">
+    Displaying Videos in category : <strong> <%= title.toUpperCase() %> </strong>
+    <p>
+
+      <% for(i=0 ; i<result.length ;i++) { %>
+        <video width="320" height="300" controls>
+        <source src="<%= result[i].url %>"></source>
+        </video>
+      <% } %>
+
+  </p>
+</div>
+  </body>
+</html>

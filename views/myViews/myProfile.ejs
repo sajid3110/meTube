@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <% include header.ejs %>
+  <head>
+    <meta charset="utf-8">
+    <title>My Profile</title>
+  </head>
+  <body>
+    <div class="container">
+      <strong>firstname</strong> : <%= data.firstname %> <br>
+      <strong>lastname</strong> : <%= data.lastname %><br>
+      <strong>username</strong> : <%= data.username %><br>
+      <strong>email</strong> : <%= data.email %><br>
+    <p>
+      <a href="/myProfile/update">Update Profile</a>
+    </p>
+    </div>
+
+  </body>
+</html>
